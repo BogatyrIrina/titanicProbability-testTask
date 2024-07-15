@@ -1,0 +1,42 @@
+var passengers = [
+     { name: "John Doe", age: 25, sex: "male", survived: true, relatives: 2 },
+     { name: "Jane Smith", age: 19, sex: "female", survived: true, relatives: 0 },
+     { name: "Michael Johnson", age: 42, sex: "male", survived: false, relatives: 1 },
+     { name: "Emily Williams", age: 17, sex: "female", survived: true, relatives: 3 },
+     { name: "David Brown", age: 29, sex: "male", survived: false, relatives: 0 }
+   ];
+
+   function filterSurvivors() {
+     displayPassengers(passengers.filter(p => p.survived));
+   }
+
+   function filterAdults() {
+     displayPassengers(passengers.filter(p => p.age >= 16));
+   }
+
+   function filterMales() {
+     displayPassengers(passengers.filter(p => p.sex === 'male'));
+   }
+
+   function filterNoRelatives() {
+     displayPassengers(passengers.filter(p => p.relatives === 0));
+   }
+
+   function displayPassengers(data) {
+     var tableBody = $('#passengers-table tbody');
+     tableBody.empty();
+     data.forEach(function(passenger) {
+       var row = $('<tr>').append(
+         $('<td>').text(passenger.name),
+         $('<td>').text(passenger.age),
+         $('<td>').text(passenger.sex),
+         $('<td>').text(passenger.survived ? 'Yes' : 'No'),
+         $('<td>').text(passenger.relatives)
+       );
+       tableBody.append(row);
+     });
+   }
+
+   $(document).ready(function() {
+     displayPassengers(passengers);
+   });

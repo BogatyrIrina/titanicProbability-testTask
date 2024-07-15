@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  plant-db:
+    image: 'postgres:13.1-alpine'
+    ports:
+      - "45533:5432"
+    container_name: pass-db-container
+    environment:
+      - POSTGRES_USER=pass
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=pass-db

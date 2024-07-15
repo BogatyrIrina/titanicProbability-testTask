@@ -1,0 +1,15 @@
+.container {
+     max-width: 800px;
+   }
+
+   .form-group {
+     margin-bottom: 1rem;
+   }
+
+   .btn {
+     margin-right: 0.5rem;
+   }
+
+   table {
+     width: 100%;
+   }
